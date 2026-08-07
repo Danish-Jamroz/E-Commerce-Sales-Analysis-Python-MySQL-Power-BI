@@ -2,11 +2,11 @@ E-Commerce Sales and Profitability Analysis
 
 This project takes a close look at a multi-category e-commerce business and asks a question that a lot of growing companies eventually run into: why isn't profit growing at the same pace as revenue? Order volumes have stayed healthy and top-line sales look strong, but that hasn't translated into the kind of margin growth leadership expected. This analysis was built to dig into that gap and figure out exactly where the money is being made, where it's quietly leaking away, and what the business should actually do about it.
 
-Background
+Background:
 
 The company operates across several product categories, sells through multiple channels, and serves customers in different regions. On paper, everything looks fine. Sales are consistent, the customer base is active, and orders keep coming in. But profitability has stagnated, and without a clear view into which products, customer segments, channels, or regions are actually driving that profit, leadership has been left making decisions somewhat in the dark. This project was built to close that gap. The goal was to identify the real drivers of profitability, flag the areas that are dragging margins down, and turn all of that into recommendations that management could actually act on.
 
-How the project was built
+How the project was built:
 
 Since a real production dataset wasn't available for this kind of end-to-end analysis, the first step was generating a realistic synthetic dataset using Python, resulting in roughly 109,884 rows across 49 columns. To make it behave like a real-world dataset, missing values and duplicate records were deliberately introduced, since any analyst working with live business data will eventually have to deal with exactly that kind of mess.
 
@@ -14,7 +14,7 @@ From there, the raw data was cleaned using Pandas and NumPy, handling the nulls,
 
 With the schema in place, all of the actual analysis was done directly in MySQL, writing queries to answer specific business questions rather than just eyeballing the data. Once the numbers were in hand, they were brought into Power BI to build an interactive dashboard that leadership could actually use to explore the findings themselves. Finally, everything was pulled together into a written report aimed at management, translating the SQL output and dashboard visuals into plain business language and concrete recommendations.
 
-What the analysis set out to answer
+What the analysis set out to answer:
 
 The questions driving this project fell into a few natural groups. On the profitability side, the goal was to understand how current sales performance was or wasn't translating into profit, and what factors were influencing that relationship. On the product side, the analysis looked at which categories and products were driving profitable growth, which ones were generating strong revenue but weak margins, and where the company should be putting more or less investment.
 
@@ -22,7 +22,7 @@ Customer behavior was another major thread. Beyond just identifying top spenders
 
 Sales channels and regions got the same treatment. Which channels and which regions were contributing the most to profitable growth, which ones looked good on revenue but weak on margin, and where the best opportunities for expansion actually were. Pricing and discounting were examined closely as well, since discounts are one of the easiest levers to pull and one of the easiest ways to quietly erode margin without anyone noticing right away. And finally, everything fed into a broader question about strategic growth: what are the real drivers of performance here, and what should the company prioritize to grow profitably rather than just growing?
 
-What the data showed
+What the data showed:
 
 The business turned out to be in solid shape overall. Total revenue came in at $42.2 million against total profit of just over $15.5 million, putting the overall profit margin at about 36 percent, meaning the company keeps roughly $36 of every $100 in sales. Across the analysis period there were 77,744 orders placed by 13,898 unique customers, working out to an average order value of $417 and an average profit of $153 per order. Encouragingly, revenue and profit moved together throughout the period. There wasn't a single stretch where sales went up while profit went down, which is a genuinely good sign that growth has been happening the right way rather than being propped up by unsustainable pricing or excessive discounting.
 
@@ -36,7 +36,7 @@ Regionally, the United States was the standout market, leading in revenue, profi
 
 Discounting turned out to be one of the more actionable findings. The average discount across the business sat at 6.70 percent, a fairly moderate level, but the relationship between discount size and profit was unmistakable: the deeper the discount, the lower the resulting profit margin. Products sold with no discount at all achieved the best profitability, with a 40.27 percent margin and $9.08 million in profit, while products in the 11 to 20 percent discount range saw margin drop to 30.47 percent. Electronics, unsurprisingly, received the largest total discounts, followed by Fashion and Home & Kitchen, and premium items like the MacBook Air, the Dell XPS 13, and the Canon EOS R50 were the specific products getting discounted the most.
 
-What we recommended
+What we recommended:
 
 Taken together, the findings pointed toward a fairly clear set of priorities for management. The United States should remain the company's top investment priority given how far ahead it is on every metric, with India kept on the radar as a longer-term growth market. Electronics and the MacBook Air specifically deserve continued investment given how much they contribute to both revenue and profit, and Fashion should stay a strategic focus given how efficiently it converts sales into margin. On the flip side, the products showing high revenue but weak or negative profit need a real look at pricing, procurement cost, and promotional spend, with some of them possibly needing to be repositioned or dropped altogether.
 
@@ -44,14 +44,14 @@ On the customer and channel side, VIP and other high-profit customers should be 
 
 More broadly, since no country or channel showed negative profitability, the company is in a strong enough position to pursue expansion in its already-profitable markets rather than needing to fix problems first. Protecting current margins should remain a constant priority as the business scales, and building a habit of monitoring the core metrics, revenue, profit, margin, customer growth, order volume, and discount effectiveness, through a live dashboard rather than periodic one-off reports will make it much easier to catch problems early and make faster, better-informed decisions going forward.
 
-Where things stand
+Where things stand:
 
 Overall, this is a business in a genuinely strong financial position. Revenue, profit, and customer orders all grew steadily over the analysis period, the United States and Electronics led the way as the strongest market and category, and the Website channel and VIP customers proved to be the biggest contributors to profitability. The one real caution flag is around discounting, since heavier discounts were consistently tied to weaker margins, and that's worth tightening up. No market or channel showed negative profitability anywhere in the analysis, which speaks well to how the business is currently being run. Going forward, the priority should be to keep doing more of what's already working, invest further in the strongest products, categories, markets, and channels, while being deliberate about pricing and discount strategy so that continued growth doesn't come at the cost of the margins that are currently healthy.
 
-Tools used
+Tools used:
 
 Python (Pandas, NumPy) for data generation and cleaning, MySQL for data storage, normalization, and analysis, and Power BI for dashboarding and visualization.
 
-Project structure
+Project structure:
 
 The repository is organized around the different stages of the workflow: the data generation and cleaning scripts, the SQL schema and analysis queries, the Power BI dashboard file, and the final written report summarizing the findings and recommendations for management.
